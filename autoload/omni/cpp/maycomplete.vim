@@ -5,7 +5,7 @@
 " Check if we can use omni completion in the current buffer
 function! s:CanUseOmnicompletion()
     " For C and C++ files and only if the omnifunc is omni#cpp#complete#Main
-    return (index(['c', 'cpp'], &filetype)>=0 && &omnifunc == 'omni#cpp#complete#Main' && !omni#cpp#utils#IsCursorInCommentOrString())
+    return (index(['c', 'cpp', 'cuda'], &filetype)>=0 && &omnifunc == 'omni#cpp#complete#Main' && !omni#cpp#utils#IsCursorInCommentOrString())
 endfunc
 
 " Return the mapping of omni completion
